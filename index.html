@@ -72,20 +72,20 @@
 
             // Dynamic audio increment function
             function audioIncrement(sound){
-              var now = sound.volume();
-              if (sound.volume < 0.80)
-                sound.volume += 0.10;
+              var now = sound.volume;
+              if (sound.volume >= 0.80)
+                sound.volume += 0.05;
               else
-                sound.volume +=0.05;
+                sound.volume +=0.10;
             }
 
             // Dynamic audio decrement function
             function audioDecrement(sound){
-              var now = sound.volume();
-              if (sound.volume < 0.80)
-                sound.volume -= 0.10;
-              else
+              var now = sound.volume;
+              if (sound.volume <= 0.20)
                 sound.volume -= 0.05;
+              else
+                sound.volume -= 0.10;
             }
 
             // DOM.event key handler
