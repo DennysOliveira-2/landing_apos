@@ -42,7 +42,7 @@
           <font class="customFont" style="font-size: 60px">Construa a sua história</p>          
         </div>
         <div>
-          <p class="loading" style="font-size: 35px">Conectando</p>
+          <p class="loading" style="font-size: 26px">Conectando</p>
         </div>
 
         <div>
@@ -53,11 +53,12 @@
 
           <script>
             var sound = document.getElementById('muzica');
-            sound.play();
-            sound.volume = 0.20;
+            sound.play(); // Starts music as soon it is ready
+            sound.volume = 0.30; // Sets starting volume
             
             document.addEventListener("keydown", eventHandler);
             
+            // Toggle for P to bear both play and pause functions
             function soundToggle(sound){
               if (sound.paused == true)
               {
@@ -69,14 +70,25 @@
               }
             }
 
+            // Dynamic audio increment function
             function audioIncrement(sound){
-              sound.volume += 0.05;
+              var now = sound.volume();
+              if (sound.volume < 0.80)
+                sound.volume += 0.10;
+              else
+                sound.volume +=0.05;
             }
 
+            // Dynamic audio decrement function
             function audioDecrement(sound){
-              sound.volume -= 0.05;
+              var now = sound.volume();
+              if (sound.volume < 0.80)
+                sound.volume -= 0.10;
+              else
+                sound.volume -= 0.05;
             }
 
+            // DOM.event key handler
             function eventHandler(e){
               key = e.keyCode;
               console.log(key);
@@ -84,6 +96,7 @@
               handleKey(key);
             }
 
+            // Useless handle kkkjj
             function handleKey(key)
             {
               if (key == 80)
