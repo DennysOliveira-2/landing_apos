@@ -92,7 +92,11 @@
             function eventHandler(e){
               var key = e.key;
               const pressed = keyHandler[key];
-              pressed();
+              
+              //Prevents undefined keys being called
+              if (pressed){
+                pressed();
+              }
             }
             
             // Object
