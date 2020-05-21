@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <script>
+      window.onload = function () {
+        var context = new AudioContext();
+      };
+    </script>
+    <meta charset="UTF-8" />
+    <title>Los Apos RP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="keks.css" />
+    <link rel="stylesheet" href="font.css" />
+   
+    <!-- remember, jQuery is completely optional -->
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="jquery.particleground.js"></script>
+    <script type="text/javascript" src="demo.js"></script>
+
+    <!-- sorc edit start-->
+    <!-- <script type="text/javascript" src="keybListener.js"></script> -->
+    <!-- <script type="text/javascript" src="audioHandler.js"></script> -->
+  </head>
+  <div class="video-background">
+    <style>
+      body {
+        background-image: url("background.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+    </style>
+  </div>
+
+  <body>
+    <div id="particles">
+      <div id="intro">
+        <div><img src="image2.png" style="width: 500px; heigth: 339px;" /></div>
+        <hr style="width: 300px;" />
+
+        <div>
+          <font class="customFont" style="font-size: 60px">Construa a sua história</p>          
+        </div>
+        <div>
+          <p class="loading" style="font-size: 35px">Conectando</p>
+        </div>
+
+        <div>
+          <audio id="muzica" volume="0.1" controls>
+            <source src="lalala.mp3" type="audio/mpeg" />
+            Seu navegador não suporta esse tipo de arquivo.
+          </audio>
+
+          <script>
+            var sound = document.getElementById('muzica');
+            sound.play();
+            
+            document.addEventListener("keydown", eventHandler);
+            
+            function soundToggle(sound){
+              if (sound.paused == true)
+              {
+                sound.play();
+              }
+              else
+              {
+                sound.pause();
+              }
+            }
+
+            function audioIncrement(sound){
+              sound.volume += 0.05;
+            }
+
+            function audioDecrement(sound){
+              sound.volume -= 0.05;
+            }
+
+            function eventHandler(e){
+              key = e.keyCode;
+              console.log(key);
+              
+              handleKey(key);
+            }
+
+            function handleKey(key)
+            {
+              if (key == 80)
+                soundToggle(sound);
+              
+              if (key == 38)
+                audioIncrement(sound);
+
+              if (key == 40)
+                audioDecrement(sound);
+            }
+
+            
+
+          </script>
+        </div>
+
+        <div><img src="Discord.png" style="width: 70px; height: 17px;" /></div>
+        <div>
+          <font class="customFont" style="font-size: 25px;">discord.gg</font><font class="customFont" style="font-size: 35px;">/3Hww7GB</font>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

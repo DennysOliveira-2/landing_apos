@@ -1,0 +1,12 @@
+@font-face {
+    font-family: "BebasNeue";
+    src: url("BebasNeue.ttf") format('truetype'), url("BebasNeue.otf");
+  }
+
+.customFont {
+    font-family: BebasNeue;
+}
+
+.loading {
+    font-family: BebasNeue;
+}
