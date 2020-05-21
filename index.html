@@ -90,26 +90,23 @@
 
             // DOM.event key handler
             function eventHandler(e){
-              key = e.keyCode;
-              console.log(key);
-              
-              handleKey(key);
+              var key = e.key;
+              const pressed = keyHandler[key];
+              pressed();
             }
-
-            // Useless handle kkkjj
-            function handleKey(key)
-            {
-              if (key == 80)
-                soundToggle(sound);
-              
-              if (key == 38)
-                audioIncrement(sound);
-
-              if (key == 40)
-                audioDecrement(sound);
-            }
-
             
+            // Object
+            const keyHandler ={
+              ArrowUp(){
+                audioIncrement(sound);
+              },
+              ArrowDown(){
+                audioDecrement(sound);
+              },
+              p(){
+                soundToggle(sound);
+              }
+            }
 
           </script>
         </div>
